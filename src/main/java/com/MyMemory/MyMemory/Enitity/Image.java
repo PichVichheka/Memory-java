@@ -1,41 +1,23 @@
 package com.MyMemory.MyMemory.Enitity;
 
+import jakarta.persistence.*;
+import lombok.*;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+@Entity
+@Table(name = "images")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity
-@Table(name = "images")
 public class Image {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    private String fileName;
-    private String url;
-
+    private String url;          // Final image URL (local file or external link)
+    private String fileName;     // For uploaded files only
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 }
-

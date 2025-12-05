@@ -47,6 +47,5 @@ public class User {
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
     }
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Image>   images ;
+    
 }
