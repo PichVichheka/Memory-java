@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ImageController {
 
-    private final ImageService imageService;
+    private final ImageService imageService ;
 
     @PostMapping("/upload")
     public ResponseEntity<ImageResponseDto> uploadImage(
