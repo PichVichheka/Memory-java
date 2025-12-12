@@ -8,8 +8,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "memories")
 public class Memory {
 
@@ -23,42 +31,43 @@ public class Memory {
     @Column(nullable = false)
     private String description;
 
+    @Column(nullable = false)
     private LocalDateTime createdAt;
 
     // ✅ REQUIRED: no-args constructor
-    public Memory() {}
-
-    // ✅ Getters
-    public Long getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    // ✅ Setters
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
+//    public Memory() {}
+//
+//    // ✅ Getters
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public String getTitle() {
+//        return title;
+//    }
+//
+//    public String getDescription() {
+//        return description;
+//    }
+//
+//    public LocalDateTime getCreatedAt() {
+//        return createdAt;
+//    }
+//
+//    // ✅ Setters
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public void setTitle(String title) {
+//        this.title = title;
+//    }
+//
+//    public void setDescription(String description) {
+//        this.description = description;
+//    }
+//
+//    public void setCreatedAt(LocalDateTime createdAt) {
+//        this.createdAt = createdAt;
+//    }
 }

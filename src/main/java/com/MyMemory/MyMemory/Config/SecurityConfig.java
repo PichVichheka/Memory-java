@@ -27,10 +27,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf.disable()) // disable CSRF for testing APIs
+            .csrf(csrf -> csrf.disable()) // disable CSRF for Postman
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/**").permitAll() // allow register/login
-                .anyRequest().authenticated() // other endpoints require authentication
+                .requestMatchers("/api/auth/**").permitAll()     
+                .requestMatchers("/api/memories/**").permitAll() 
+                .anyRequest().authenticated()                    
             );
 
         return http.build();
