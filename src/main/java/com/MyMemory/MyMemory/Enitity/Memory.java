@@ -33,5 +33,10 @@ public class Memory {
 
     @Column(nullable = false)
     private LocalDateTime createdAt;
+    
+    
+    @Column(nullable = false)
+    private String category = "default";
+
 
 }
